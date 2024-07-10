@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.plot.ly/plotly-2.32.0.min.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <!-- Plotly.newPlot('tester', data, layout, {
+        scrollZoom: false,
+        staticPlot: true,
+        margin: { t: 0 },
+        displayModeBar: false
+    }); -->
+
+    <div id="tester" style="height: 250px;"></div>
+    <script>
+        var trace1 = {
+            x: [1, 2, 3, 4],
+            y: [10, 11, 12, [% "Interdicciones" %]],
+            mode: 'markers',
+            marker: {
+                size: [12, 18, 24, 30],
+                color: ['rgb(93, 164, 214)', 'rgb(255, 144, 14)',  'rgb(44, 160, 101)', 'rgb(255, 65, 54)'],
+            }
+        };
+
+        var data = [trace1];
+
+        var layout = {
+            title: 'Interdicciones / Actas: [% "Interdicciones" %]',
+            displayModeBar: false,
+            height: 260,
+            width: 350
+        };
+
+        Plotly.newPlot('tester', data, layout);
+
+    </script>
+</body>
+
+</html>

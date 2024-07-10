@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+    <div id="myDiv">
+        
+        <script>
+            var data = [{
+                values: [[% "CAMION" %], [%aggregate('tablero___cmt_trigo_dic_2022_total_acumulado_ea724b29_34c4_4ec2_8bae_2ca72f2a964a','sum',"CAMION")%]-[% "CAMION" %]],
+                labels: [['[% "Localidad" %]: [% "CAMION" %]'],['-']],
+                type: 'pie'
+            }];
+
+            var layout = {
+                title: "Total camiones del operativo: [%aggregate('tablero___cmt_trigo_dic_2022_total_acumulado_ea724b29_34c4_4ec2_8bae_2ca72f2a964a','sum',"CAMION")%]",
+                height: 260,
+                width: 350
+            };
+
+            Plotly.newPlot('myDiv', data, layout,{
+            displayModeBar: false,
+            staticPlot: true,
+            margin: { t: 0 }
+        });
+        </script>
+    </div>
+</body>
+
+</html>

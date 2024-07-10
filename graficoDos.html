@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.plot.ly/plotly-2.32.0.min.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <div id="tester" style="height: 250px;"></div>
+
+    <script>
+        var data = [
+            {
+                x: ['[% "Localidad" %]: [% "ACTA" %]', 'Actas totales'],
+                y: [[% "ACTA" %] , [%aggregate('tablero___cmt_trigo_dic_2022_total_acumulado_ea724b29_34c4_4ec2_8bae_2ca72f2a964a','sum',"ACTA")%]],
+                type: 'bar'
+            }
+        ];
+        var layout = {
+            title: 'Total de actas del operativo: [%aggregate('tablero___cmt_trigo_dic_2022_total_acumulado_ea724b29_34c4_4ec2_8bae_2ca72f2a964a','sum',"ACTA")%]',
+            showlegend: false
+        }
+        Plotly.newPlot('tester', data, layout, {
+            displayModeBar: false,
+            staticPlot: true,
+            margin: { t: 0 }
+        })
+
+    </script>
+</body>
+
+</html>
